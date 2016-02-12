@@ -13,7 +13,7 @@ class Book(TimeStampedModel):
     publishing_house = models.CharField(max_length=255, blank=True, null=True, verbose_name="Editora")
     comments = models.CharField(max_length=255, blank=True, null=True, verbose_name="Comentários")
     category = models.ForeignKey('books_categories.BookCategory', verbose_name='Categoria')
-    ano = models.CharField(max_length=4, blank=True, null=True, verbose_name="Ano")
+    year = models.CharField(max_length=4, blank=True, null=True, verbose_name="Ano")
 
     def __unicode__(self):
         return self.name
