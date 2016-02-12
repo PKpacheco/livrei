@@ -38,6 +38,13 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'core',
+    'homesite',
+    'people',
+    'books',
+    'books_categories',
+    'institutions',
+
 )
 
 MIDDLEWARE_CLASSES = (
@@ -86,7 +93,7 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pt-br'
 
 TIME_ZONE = 'UTC'
 
@@ -101,3 +108,33 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_collected/')
+
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+
+SUIT_CONFIG = {
+    'ADMIN_NAME': 'Livrei',
+    'SEARCH_URL': '',
+
+    #'MENU_ORDER': (
+    #     ('campaigns',('campaigns.banner','campaigns.question','campaigns.repliedin')),
+    #     ('categories',),
+    #     ('people',('people.person','people.contact'))
+    # ),
+
+    'MENU': (
+
+        # {'app': 'portfolio_categories', 'models': ('person', 'question','repliedin')},
+        {'app': 'books', 'label': 'Livros'},
+        {'app': 'books_categories', 'label': 'Categorias dos Livros'},
+        {'app': 'institutions', 'label': 'Instituicoes'},
+        {'app': 'people', 'label': 'Usuarios'},
+
+
+        #{'label': 'Support', 'icon':'icon-question-sign', 'url': '/support/'},
+    ),
+}
