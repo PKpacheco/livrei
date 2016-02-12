@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'core',
     'homesite',
     'people',
@@ -138,3 +139,7 @@ SUIT_CONFIG = {
         #{'label': 'Support', 'icon':'icon-question-sign', 'url': '/support/'},
     ),
 }
+
+X_FRAME_OPTIONS = 'allowall'
+CORS_URLS_REGEX = r'^/api/v1/.*$'
+CORS_ORIGIN_ALLOW_ALL = True
